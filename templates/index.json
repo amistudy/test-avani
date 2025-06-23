@@ -1,0 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_content_9Uwq6x": {
+      "type": "about-content",
+      "name": "About Section",
+      "settings": {
+        "image": "shopify://shop_images/flower.jpg",
+        "heading": "About Us",
+        "description": "sections/about-content.liquid",
+        "button_label": "Learn More",
+        "button_link": "shopify://products/example-shirt"
+      }
+    },
+    "test_demo_MmMbbK": {
+      "type": "test_demo",
+      "name": "Custom Demo Test",
+      "settings": {
+        "slide_secheadOnenew": "TEST DEMO :  sections/test_demo.liquid",
+        "test_img_onenew": "shopify://shop_images/business-meeting-over-coffee.jpg"
+      }
+    },
+    "test_demo_one_8cLadU": {
+      "type": "test_demoOne",
+      "blocks": {
+        "multiple_text_one_qwPNCh": {
+          "type": "multiple_text_one",
+          "settings": {
+            "multi_line_one": "lorem ipsum...."
+          }
+        },
+        "multiple_text_one_qMdTft": {
+          "type": "multiple_text_one",
+          "settings": {
+            "multi_line_one": "list2"
+          }
+        },
+        "multiple_text_one_MmbeB9": {
+          "type": "multiple_text_one",
+          "settings": {
+            "multi_line_one": "list 3"
+          }
+        }
+      },
+      "block_order": [
+        "multiple_text_one_qwPNCh",
+        "multiple_text_one_qMdTft",
+        "multiple_text_one_MmbeB9"
+      ],
+      "name": "Custom Demo Test one",
+      "settings": {
+        "slide_secheadOne": "sections/test_demoOne.liquid",
+        "test_img_one": "shopify://shop_images/woman-puts-hand-in-pocket.jpg"
+      }
+    },
+    "test_demo_two_kbKnih": {
+      "type": "test_demoTwo",
+      "blocks": {
+        "multiple_text_HwBA7x": {
+          "type": "multiple_text",
+          "settings": {
+            "multi_line": "list 1"
+          }
+        },
+        "button_block_bTXTEV": {
+          "type": "button_block",
+          "settings": {
+            "btn_label": "Click Here",
+            "btn_url": "shopify://pages/about"
+          }
+        }
+      },
+      "block_order": [
+        "multiple_text_HwBA7x",
+        "button_block_bTXTEV"
+      ],
+      "name": "Custom Demo Test Two new",
+      "settings": {
+        "slide_sechead": "sections/test_demoTwo.liquid",
+        "descption_style": "center",
+        "descption_color": "#1b8eff",
+        "descption_number": 30,
+        "descption_bg": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)",
+        "choice": "one",
+        "description": "",
+        "test_img": "shopify://shop_images/business-meeting-over-coffee.jpg"
+      }
+    },
+    "custom_section_N8tgTp": {
+      "type": "custom-section",
+      "blocks": {
+        "sample_code_PhPgiT": {
+          "type": "sample_code",
+          "name": "Sample Code Example",
+          "settings": {
+            "code": "Blocks/sample_code.liquid\nand\nsections/theme-blocks.liquid",
+            "descption_style": "center",
+            "descption_color": "#e43939",
+            "descption_bg": "linear-gradient(180deg, rgba(255, 211, 226, 1), rgba(168, 255, 251, 1) 100%)",
+            "descption_number": 25
+          },
+          "blocks": {}
+        },
+        "text_h7A4th": {
+          "type": "text",
+          "name": "Text",
+          "settings": {
+            "text": "<p>blocks/text.liquid</p><p>sections/theme-blocks.liquid</p>",
+            "alignment": "center"
+          },
+          "blocks": {}
+        },
+        "text_4NhwgA": {
+          "type": "text",
+          "name": "Content",
+          "settings": {
+            "text": "<p>Hello, world!<br/><strong>Blocks/sample_code.liquid<br/>and<br/>sections/theme-blocks.liquid</strong></p>",
+            "alignment": "left"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "sample_code_PhPgiT",
+        "text_h7A4th",
+        "text_4NhwgA"
+      ],
+      "name": "Custom section",
+      "settings": {}
+    },
+    "test_demo_two_X7caeC": {
+      "type": "test_demoTwo",
+      "blocks": {
+        "button_block_xRJUiN": {
+          "type": "button_block",
+          "settings": {
+            "btn_label": "Click Here",
+            "btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_block_xRJUiN"
+      ],
+      "name": "Default Content",
+      "settings": {
+        "slide_sechead": "sections/test_demoTwo.liquid",
+        "descption_style": "center",
+        "descption_color": "#d01eff",
+        "descption_number": 30,
+        "descption_bg": "",
+        "choice": "two",
+        "description": "<p>This is a richtext default from presets</p>"
+      }
+    },
+    "custom_dynamic_section_KGLwpa": {
+      "type": "custom-dynamic-section",
+      "blocks": {
+        "text_Dw3Pgw": {
+          "type": "text",
+          "settings": {
+            "text_content": "sections/custom-dynamic-section.liquid"
+          }
+        },
+        "image_G9iERx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/laptop-from-above.jpg"
+          }
+        },
+        "button_eqGQYw": {
+          "type": "button",
+          "settings": {
+            "button_text": "Click Me",
+            "button_link": "shopify://pages/about"
+          }
+        }
+      },
+      "block_order": [
+        "text_Dw3Pgw",
+        "image_G9iERx",
+        "button_eqGQYw"
+      ],
+      "name": "Dynamic Content Section",
+      "settings": {}
+    },
+    "feature_loop_zbaKiq": {
+      "type": "feature-loop",
+      "blocks": {
+        "feature_H8JBGA": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/laptop-from-above.jpg",
+            "title": "Free Shipping",
+            "description": "We offer fast and free delivery."
+          }
+        },
+        "feature_hgf3nL": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/apps-for-life.jpg",
+            "title": "Secure Payment",
+            "description": "100% safe and encrypted checkout."
+          }
+        },
+        "feature_TNATXA": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/kids-beanie.jpg",
+            "title": "reliable",
+            "description": "lorem ipsum"
+          }
+        }
+      },
+      "block_order": [
+        "feature_H8JBGA",
+        "feature_hgf3nL",
+        "feature_TNATXA"
+      ],
+      "name": "Features Grid",
+      "settings": {
+        "heading": "Our Features : sections/feature-loop.liquid"
+      }
+    },
+    "feature_static_MDazQJ": {
+      "type": "feature-static",
+      "name": "Single Feature ",
+      "settings": {
+        "icon": "shopify://shop_images/female-fashion-model-poses-in-city-street.jpg",
+        "title": "Free Shipping: sections/ feature-static.liquid",
+        "description": "We offer fast and free delivery on all orders."
+      }
+    },
+    "designer_NPY9Ux": {
+      "type": "designer",
+      "name": "Designers",
+      "settings": {
+        "designertitle": "Meet Our Designers"
+      }
+    },
+    "image_comparision_Pek3Ck": {
+      "type": "image-comparision",
+      "name": "Image Comparison",
+      "settings": {
+        "title": "Before And After Image",
+        "before_image": "shopify://shop_images/photoshop-face-before.jpg",
+        "after_image": "shopify://shop_images/photoshop-face-after.jpg"
+      }
+    }
+  },
+  "order": [
+    "about_content_9Uwq6x",
+    "test_demo_MmMbbK",
+    "test_demo_one_8cLadU",
+    "test_demo_two_kbKnih",
+    "custom_section_N8tgTp",
+    "test_demo_two_X7caeC",
+    "custom_dynamic_section_KGLwpa",
+    "feature_loop_zbaKiq",
+    "feature_static_MDazQJ",
+    "designer_NPY9Ux",
+    "image_comparision_Pek3Ck"
+  ]
+}

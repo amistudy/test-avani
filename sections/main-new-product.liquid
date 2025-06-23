@@ -1,0 +1,13 @@
+<section class="main-product py-10">
+  <div class="container mx-auto">
+    <h2 class="text-2xl font-bold">{{ product.title }}</h2>
+    <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}" class="my-4">
+    <p class="text-lg">{{ product.description }}</p>
+    <p class="text-xl font-semibold mt-2">{{ product.price | money }}</p>
+    {% form 'product', product %}
+      <button type="submit" class="mt-4 bg-black text-white px-4 py-2 rounded">
+        Add to Cart
+      </button>
+    {% endform %}
+  </div>
+</section>

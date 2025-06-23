@@ -1,0 +1,15 @@
+<div
+  class="custom-text-box"
+  style="background-color: #f9fafb; padding: 20px; border-radius: 12px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+  data-aos="fade-up"
+  data-aos-duration="800"
+  onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+>
+  {% if image != blank %}
+    <img src="{{ image | image_url: width: 300 }}" alt="Box Image" style="max-width: 100%; margin-bottom: 15px;">
+  {% endif %}
+  <h2 style="font-size: 1.5rem; font-weight: 600;">{{ title }}</h2>
+  <p style="color: #555;">{{ description }}</p>
+</div>
+

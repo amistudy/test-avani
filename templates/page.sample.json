@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main_sample_page_Jzkj8r": {
+      "type": "main-sample-page",
+      "blocks": {
+        "sample_block_name_fiHNW4": {
+          "type": "sample_block_name",
+          "settings": {
+            "sample_block_richtext": "<p>RIch text</p>",
+            "sample_block_textarea": "asdasd"
+          }
+        },
+        "sample_another_block_ydMYXw": {
+          "type": "sample_another_block",
+          "settings": {
+            "show_title": true,
+            "highlight_text": true,
+            "blog": ""
+          }
+        },
+        "sample_another_block_JyEWnG": {
+          "type": "sample_another_block",
+          "settings": {
+            "show_title": false,
+            "highlight_text": false,
+            "blog": ""
+          }
+        }
+      },
+      "block_order": [
+        "sample_block_name_fiHNW4",
+        "sample_another_block_ydMYXw",
+        "sample_another_block_JyEWnG"
+      ],
+      "name": "section sample",
+      "settings": {
+        "sample-heading": "Sample Heading",
+        "description": "<p>Description of richtext</p>"
+      }
+    }
+  },
+  "order": [
+    "main_sample_page_Jzkj8r"
+  ]
+}

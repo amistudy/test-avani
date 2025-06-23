@@ -1,0 +1,35 @@
+<section>
+  <h2>{{ section.settings.slide_secheadOnenew }}</h2>
+
+  {% if section.settings.test_img_onenew != blank %}
+     <img src="{{ section.settings.test_img_onenew | img_url: '80x80'}}">
+  {% endif %} 
+ 
+</section>
+
+{% schema %}
+{
+  "name": "SlideimgOnenew",
+  "tag": "section",
+  "class": "slide_sec",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slide_secheadOnenew",
+      "label": "Slidess",
+      "default": "Section's Title One new"
+    },
+    {
+      "type": "image_picker",
+      "id": "test_img_onenew",
+      "label": "Choose Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Demo Test",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+<section class="custom-hero-section text-center py-12 bg-gray-100">
+  <h1 class="text-4xl font-bold mb-4">{{ section.settings.heading }}</h1>
+  <p class="text-lg text-gray-600">{{ section.settings.subheading }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "Welcome to Our Product Page"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Discover features, pricing, and reviews"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

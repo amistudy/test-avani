@@ -1,0 +1,147 @@
+<style>
+.designer-container{
+  display: flex;
+  background-color: #f6f6f6;
+  padding: 3rem;
+  margin-top: 5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  column-gap: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.designer-container span{
+    font-style: italic;
+}
+.designer-container h4{
+    margin-bottom: 0;
+}
+h2{
+  font-weight: bold;
+}
+.designer-container .img{
+  width: 40%;
+}
+.designer-body{
+  width: 60%;
+  line-height: 1.8;
+}
+.designer-body h2{
+  margin: 0;
+}
+ .hidden-designer {
+    display: none;
+}
+.read-toggle {
+    text-align: center;
+    margin: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .designer-container{
+        flex-direction: column;
+    }
+    .designer-container>div {
+        width: 100% !important;
+    }
+    .designer-container {
+        flex-direction: column;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+  }
+</style>
+
+{% comment %}
+<div class="designer-title">
+  <h2>{{ section.settings.designertitle }}</h2>
+</div>
+
+<!-- it will display all designer -->
+{% for designer in shop.metaobjects.designer.values %}
+<div class="designer-container">
+  <div class="img">
+    <img src="{{designer.photo |img_url:'500x' }}" alt="Designer">
+  </div>
+  <div class="designer-body">
+    <h2 class="h1">{{ designer.name }}</h2>
+    <p class="designer-text">{{ designer.description }}</p>
+    <a href="{{ designer.website }}" class="button button--primary">See all their products</a>
+  </div>
+</div>
+{% endfor %}
+{% endcomment %}
+
+<!-- it will display first 2 designer and then add butoon i.e read more & read less -->
+
+<div class="designer-wrapper">
+  {% assign count = 0 %}
+  {% for designer in shop.metaobjects.designer.values %}
+    {% assign count = count | plus: 1 %}
+    <div class="designer-container{% if count > 2 %} hidden-designer{% endif %}">
+      <div class="img">
+        <img src="{{ designer.photo | img_url: '500x' }}" alt="Designer">
+      </div>
+      <div class="designer-body">
+        <h2 class="h1">{{ designer.name }}</h2>
+        <p class="designer-text">{{ designer.description }}</p>
+        <a href="{{ designer.website }}" class="button button--primary">See all their products</a>
+      </div>
+    </div>
+  {% endfor %}
+
+  <!-- ✅ Display button only if >2 designers -->
+  {% assign designer_count = 0 %}
+  {% for d in shop.metaobjects.designer.values %}
+    {% assign designer_count = designer_count | plus: 1 %}
+  {% endfor %}
+  {% if designer_count > 2 %}
+    <div class="read-toggle">
+      <button id="toggleDesigners" class="button button--secondary">Read more</button>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "Designers",
+    "settings": [
+      {
+        "type": "text",
+      "id": "designertitle",
+      "label": "Designer Heading",
+      "default": "Meet Our Designers"
+      }
+     ],
+    "presets": [{
+        "name": "Designers",
+        "category": "custom",
+
+  }]
+  }
+{% endschema %}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("toggleDesigners");
+    const hiddenDesigners = document.querySelectorAll(".hidden-designer");
+    let expanded = false;
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", function () {
+        hiddenDesigners.forEach(el => {
+          el.style.display = expanded ? "none" : "flex";
+        });
+        toggleBtn.textContent = expanded ? "Read more" : "Read less";
+        expanded = !expanded;
+      });
+    }
+  });
+</script>

@@ -1,0 +1,57 @@
+{{ 'beer-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <h2 class="text-xl font-bold mb-4">{{ section.settings.title }}</h2>
+
+  <div id="image-comparison-{{ section.id }}" class="beer-slider" data-beer-label="Before">
+    {{ section.settings.before_image | image_url: width: 600 | image_tag: class: 'beer-slider-before', alt: 'Before Image' }}
+
+    <div class="beer-reveal" data-beer-label="After">
+      {{ section.settings.after_image | image_url: width: 600 | image_tag: class: 'beer-slider-after', alt: 'After Image' }}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'beer-slider.js' | asset_url }}" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new BeerSlider(document.getElementById('image-comparison-{{ section.id }}'));
+  });
+
+  document.addEventListener('shopify:section:load', function (e) {
+    const slider = e.target.querySelector('.beer-slider');
+    if (slider) {
+      new BeerSlider(slider);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Image Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title",
+      "default": "Compare Before & After"
+    },
+    {
+      "type": "image_picker",
+      "label": "Before Image",
+      "id": "before_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "After Image",
+      "id": "after_image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Comparison",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

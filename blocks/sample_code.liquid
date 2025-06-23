@@ -1,0 +1,63 @@
+<div class="sample-code-block text-{{ block.settings.descption_style }}" 
+     style="
+       color: {{ block.settings.descption_color }};
+       background: {{ block.settings.descption_bg }};
+       padding: 1rem;
+       font-size:{{ block.settings.descption_number }}px;
+       border-radius: 0.5rem;
+       word-break: break-word;
+       white-space: pre-wrap;
+     ">
+  <p>Sample Code Block Rendered ✅</p>
+  {{ block.settings.code }}
+</div>
+
+{% stylesheet %}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sample Code Block",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "code",
+      "label": "Enter code"
+    },
+    {
+      "type": "text_alignment",
+      "id": "descption_style",
+      "label": "Alignment"
+    },
+    {
+      "type": "color",
+      "id": "descption_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "color_background",
+      "id": "descption_bg",
+      "label": "Select Background Color"
+    },
+    {
+      "type": "number",
+      "id": "descption_number",
+      "label": "Select Font size"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sample Code Example"
+    }
+  ]
+}
+{% endschema %}

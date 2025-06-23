@@ -1,0 +1,46 @@
+{% comment %}
+<section class="custom-text-box">
+  <p>{{ section.settings.title }} </p>
+  <p>{{ section.settings.description }} </p>
+</section>
+{% endcomment %}
+
+
+<section>
+  {% render 'text-box',
+    image: section.settings.image,
+    title: section.settings.title,
+    description: section.settings.description
+  %}
+</section>
+
+{% schema %}
+{
+  "name": "Custom Text Box",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Title Here"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Your short description goes here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Box with Image",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

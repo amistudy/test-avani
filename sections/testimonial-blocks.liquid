@@ -1,0 +1,78 @@
+<section class="testimonial-section bg-gray-50 py-12">
+  <div class="container mx-auto max-w-4xl text-center">
+    <h2 class="text-3xl font-bold mb-8">{{ section.settings.heading }}</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      {% for block in section.blocks %}
+        <div class="p-6 bg-white shadow rounded">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | img_url: '100x100' }}" alt="{{ block.settings.name }}" class="mx-auto mb-4 rounded-full w-20 h-20 object-cover">
+          {% endif %}
+          <p class="italic text-gray-700 mb-2">“{{ block.settings.quote }}”</p>
+          <p class="font-semibold text-gray-900">– {{ block.settings.name }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "What Our Customers Say"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Jane Doe"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonial Quote",
+          "default": "This product changed my life!"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer Photo"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "custom",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jane Doe",
+            "quote": "Amazing quality and fast delivery!"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "John Smith",
+            "quote": "Really impressed with the service."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

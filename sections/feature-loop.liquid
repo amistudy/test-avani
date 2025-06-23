@@ -1,0 +1,75 @@
+<section class="px-4 py-16 bg-gray-50 text-center">
+  <h2 class="text-3xl font-bold mb-10">{{ section.settings.heading }}</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {% for block in section.blocks %}
+      <div class="p-6 bg-white rounded shadow">
+        {% if block.settings.icon != blank %}
+          <img src="{{ block.settings.icon | img_url: '80x80' }}" class="mx-auto mb-4" alt="icon">
+        {% endif %}
+        <h3 class="text-xl font-semibold mb-2">{{ block.settings.title }}</h3>
+        <p class="text-gray-600">{{ block.settings.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Features Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Features"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Grid",
+      "category": "custom",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Free Shipping",
+            "description": "We offer fast and free delivery.",
+            "icon": ""
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "title": "Secure Payment",
+            "description": "100% safe and encrypted checkout.",
+            "icon": ""
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

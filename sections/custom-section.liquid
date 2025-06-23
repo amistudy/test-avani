@@ -1,0 +1,26 @@
+<section class"custom-section">
+    {% content_for 'blocks' %}
+</section>
+
+{% schema %}
+    {
+        "name" : "Custom section",
+        "settings": [],
+        "blocks" : [
+            {
+                "type": "@theme"
+            },
+            {
+                "type": "@app"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom section",
+                "category": "custom"
+            }
+        ]
+
+    }
+
+{% endschema %}

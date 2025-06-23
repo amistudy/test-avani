@@ -1,0 +1,69 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "custom-hero",
+      "settings": {
+        "heading": "Welcome to Our Product Page",
+        "subheading": "Discover features, pricing, and reviews"
+      }
+    },
+    "product": {
+      "type": "main-new-product",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonial-carousel",
+      "blocks": {
+        "testimonial_zeDM7f": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jane Doe",
+            "quote": "This product is amazing!",
+            "image": "shopify://shop_images/fabian-centeno-Hkavt2MAOEc-unsplash.jpg",
+            "rating": 5
+          }
+        },
+        "testimonial_tb4Bnt": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jazzy",
+            "quote": "best ever..!!",
+            "image": "shopify://shop_images/jake-nackos-IF9TK5Uy-KI-unsplash.jpg",
+            "rating": 5
+          }
+        },
+        "testimonial_DxrDMA": {
+          "type": "testimonial",
+          "settings": {
+            "name": "juliana",
+            "quote": "awesome product",
+            "image": "shopify://shop_images/avani.jpg",
+            "rating": 4
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zeDM7f",
+        "testimonial_tb4Bnt",
+        "testimonial_DxrDMA"
+      ],
+      "settings": {
+        "heading": "What Customers Say"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "product",
+    "testimonials"
+  ]
+}

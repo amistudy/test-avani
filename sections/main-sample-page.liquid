@@ -1,0 +1,106 @@
+<h1>{{ page_title }}</h1>
+{% if page_description %}
+  <p> {{ page_description }}</p>
+{% endif %}
+
+
+<h2>{{ section.settings.sample-heading }}</h2>
+<p>{{ section.settings.description }}</p>
+
+<div>
+{% for block in section.blocks %}
+  {% if block.settings.sample_block_richtext %}
+    <p> {{ block.settings.sample_block_richtext }}</p>
+  {% endif %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% if block.settings.sample_block_textarea %}
+    <p> {{ block.settings.sample_block_textarea }}</p>
+  {% endif %}
+{% endfor %}
+</div>
+
+<div>
+{% for block in section.blocks %}
+  {% if block.settings.show_title %}
+    <h2 class="text-2xl font-bold">Show Title</h2>
+  {% endif %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% if block.settings.highlight_text %}
+    <h2 class="text-2xl font-bold">Highlighted Text</h2>
+  {% endif %}
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Sample Section", 
+    "settings": [
+      {
+        "type": "text",
+        "id":"sample-heading",
+        "label": "Sample Heading",
+        "default": "Sample Heading"
+      },
+      {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "sample_block_name",
+        "name": "Sample Block",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "sample_block_richtext",
+            "label": "Sample Block Richtext"            
+          },
+          {
+            "type": "textarea",
+            "id": "sample_block_textarea",
+            "label": "Sample Block textarea"
+          }
+        ]        
+      },
+      {
+        "type": "sample_another_block",
+        "name": "Sample Another Block",
+        "settings": [
+          {
+              "type": "checkbox",
+              "id": "show_title",
+              "label": "Show Title",             
+          },
+          {
+            "type": "checkbox",
+            "id": "highlight_text",
+            "label": "Highlight Text"
+          },
+          {
+              "type": "blog",
+              "id": "blog",
+              "label": "Blog"
+            },         
+       ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "section sample",
+        "category": "custom",
+        "blocks": [
+          {
+            "type": "sample_block_name",            
+          }
+        ]        
+      }        
+    ]
+  }
+{% endschema %}

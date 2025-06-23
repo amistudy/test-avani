@@ -1,0 +1,153 @@
+<section style="background: {{ section.settings.descption_bg }};padding: 1rem;border-radius: 0.5rem;">
+  <h2 class="text-{{ section.settings.descption_style }}"
+      style="color: {{ section.settings.descption_color }};font-size:{{ section.settings.descption_number }}px;
+       word-break: break-word;white-space: pre-wrap;">{{ section.settings.slide_sechead }}</h2>
+  
+  <p>Selected option: {{ section.settings.choice }}</p>
+  
+  {% if section.settings.test_img != blank %}
+    <img src="{{ section.settings.test_img | img_url: '200x80' }}" alt="Test Image">
+  {% endif %}
+ 
+ 
+  {% if section.blocks.size > 0 %}
+    <div class="space-y-4 mt-6">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          
+          {% when 'multiple_text' %}
+            <p class="text-gray-700 text-lg">{{ block.settings.multi_line }}</p>
+
+          {% when 'button_block' %}
+            <a href="{{ block.settings.btn_url }}" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              {{ block.settings.btn_label }}
+            </a>
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+{% stylesheet %}
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+{% endstylesheet %}
+
+
+{% schema %}
+{
+  "name": "Slideimg",
+  "tag": "section",
+  "class": "slide_sec",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slide_sechead",
+      "label": "Slidess",
+      "default": "Section's Title"
+    },
+    {
+      "type": "text_alignment",
+      "id": "descption_style",
+      "label": "Text alignment"
+    },
+    {
+      "type": "color",
+      "id": "descption_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "number",
+      "id": "descption_number",
+      "label": "Select Font size"
+    },
+    {
+      "type": "color_background",
+      "id": "descption_bg",
+      "label": "Select Background Color"
+    },
+    {
+      "type": "select",
+      "id": "choice",
+      "label": "Choose Option",
+      "options": [
+        { "value": "one", "label": "Option One" },
+        { "value": "two", "label": "Option Two" }
+      ],
+      "default": "two"
+    },
+     {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "test_img",
+      "label": "Choose Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "multiple_text",
+      "name": "Multiple Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "multi_line",
+          "label": "Multiple text"
+        }
+      ]
+    },
+    {
+      "type": "button_block",
+      "name": "Button Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Button Label",
+          "default": "Click Here"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+ "presets": [
+    {
+      "name": "Custom Demo Test Two new",
+      "category": "custom",
+      "blocks": [
+          {
+            "type": "multiple_text"
+          },
+          {
+            "type": "button_block"
+          }
+      ]
+    },
+    {
+      "name": "Default Content",
+      "category": "custom",
+      "settings": {
+        "description": "<p>This is a richtext default from presets</p>"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+<section class="px-4 py-16 bg-gray-50 text-center">
+  <img src="{{ section.settings.icon | img_url: '80x80' }}" class="mx-auto mb-4" alt="icon">
+  <h2 class="text-2xl font-bold mb-2">{{ section.settings.title }}</h2>
+  <p class="text-gray-600">{{ section.settings.description }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Single Feature",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We offer fast and free delivery on all orders."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Single Feature",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}
